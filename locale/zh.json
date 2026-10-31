@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Motrix 下载助手",
+    "description": "模型请求下载时优先交给本地 Motrix（aria2）下载，Motrix 不可用时自动回退为内置直连下载。"
+  }
+}

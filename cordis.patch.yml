@@ -1,0 +1,7 @@
+# dsh-motrix-download bundle patch: mounts the Motrix download tools (and the
+# "prefer Motrix for downloads" system-prompt section) into a dsh profile.
+# The row references the package by npm name, so Node resolution finds the
+# installed code; `dsh-motrix-download` resolves to this package's main (index.js).
+- insert:
+    - id: tool-motrix-download
+      name: dsh-motrix-download

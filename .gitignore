@@ -1,0 +1,10 @@
+# Local research notes and probe artifacts stay out of the public repo:
+# they contain machine-specific paths, live bridge tokens and third-party
+# type-declaration snapshots. Sanitized protocol documentation lives in docs/.
+research/
+
+node_modules/
+.DS_Store
+Thumbs.db
+*.log
+.dsh-*/

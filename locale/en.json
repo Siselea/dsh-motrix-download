@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Motrix Download",
+    "description": "Routes model download requests to the local Motrix (aria2) app and falls back to a built-in direct download when Motrix is unavailable."
+  }
+}
