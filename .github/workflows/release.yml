@@ -31,3 +31,16 @@ jobs:
           gh release create "${GITHUB_REF_NAME}" ./*.tgz \
             --title "${GITHUB_REF_NAME}" \
             --generate-notes
+
+      # Optional: publish to npm when the NPM_TOKEN secret is configured.
+      # Without the secret the step is a no-op, so forks/tags keep working.
+      - name: Publish to npm (requires NPM_TOKEN secret)
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          if [ -z "$NPM_TOKEN" ]; then
+            echo "NPM_TOKEN not set; skipping npm publish"
+            exit 0
+          fi
+          echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
+          npm publish --access public
