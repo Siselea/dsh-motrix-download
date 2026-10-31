@@ -1,6 +1,7 @@
 # dsh-motrix-download
 
 ![CI](https://github.com/Siselea/dsh-motrix-download/actions/workflows/check.yml/badge.svg)
+![Release](https://img.shields.io/github/v/release/Siselea/dsh-motrix-download)
 ![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Node](https://img.shields.io/badge/node-%3E%3D20-brightgreen.svg)
 
@@ -27,11 +28,21 @@ Downloads created by this plugin are real Motrix tasks: they show up in the app,
 
 ## Install
 
+Option A — clone the repository:
+
 ```bash
 git clone https://github.com/Siselea/dsh-motrix-download.git
 ```
 
-Then install it into your Harness profile (replace `<abs>` with the cloned absolute path):
+Option B — download `dsh-motrix-download-0.1.0.tgz` from
+[Releases](https://github.com/Siselea/dsh-motrix-download/releases) and extract it:
+
+```bash
+tar -xzf dsh-motrix-download-0.1.0.tgz
+```
+
+Then install it into your Harness profile (replace `<abs>` with the cloned or
+extracted absolute path):
 
 ```text
 plugin_manager action=install_bundle target=<abs>/dsh-motrix-download

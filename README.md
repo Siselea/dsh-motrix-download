@@ -1,6 +1,7 @@
 # dsh-motrix-download
 
 ![CI](https://github.com/Siselea/dsh-motrix-download/actions/workflows/check.yml/badge.svg)
+![Release](https://img.shields.io/github/v/release/Siselea/dsh-motrix-download)
 ![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Node](https://img.shields.io/badge/node-%3E%3D20-brightgreen.svg)
 
@@ -27,13 +28,21 @@
 
 ## 安装
 
-先获取代码：
+> 尚未发布到 npm；如需通过包名安装，可自行 `npm login && npm publish --access public`（包名 `dsh-motrix-download` 可用）。
+
+方式一：clone 仓库
 
 ```bash
 git clone https://github.com/Siselea/dsh-motrix-download.git
 ```
 
-然后在 Harness 中安装为该 profile 的 bundle（把 `<abs>` 换成 clone 出来的绝对路径）：
+方式二：从 [Releases](https://github.com/Siselea/dsh-motrix-download/releases) 下载 `dsh-motrix-download-0.1.0.tgz` 并解压：
+
+```bash
+tar -xzf dsh-motrix-download-0.1.0.tgz
+```
+
+然后在 Harness 中安装为该 profile 的 bundle（把 `<abs>` 换成 clone 或解压出来的绝对路径）：
 
 ```text
 plugin_manager action=install_bundle target=<abs>/dsh-motrix-download
@@ -155,9 +164,11 @@ dsh-motrix-download/
 ├── package.json          # dsh.bundle.patch + locale/icon 导出
 ├── locale/{en,zh}.json   # Plugin Manager 标题/描述
 ├── icon.svg              # 图标
+├── .github/workflows/    # CI（离线检查）与 Release（打 tag 自动发布）
 ├── docs/mdxp-notes.md    # MDXP 协议实测笔记
 ├── scripts/check.mjs     # 离线自检（CI）
 ├── smoke.mjs             # 端到端自检（需要 Motrix）
+├── CHANGELOG.md          # 版本记录
 └── LICENSE               # MIT
 ```
 
